@@ -24,7 +24,7 @@ const Home: React.FC = () => {
   useState("");
 
   const [sizeOfArray, setSizeOfArray] = useState(0);
-  const [selectedName, setSelectedName] = useState("(name)");
+  const [, setSelectedName] = useState("(name)");
 
   const generateComments = (): IComments[] => {
     return [

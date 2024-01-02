@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef, RefObject } from "react";
+import React, { RefObject } from "react";
 
 interface CommentDropDownProps {
   comments: any[];

@@ -63,8 +63,61 @@ input[type="file"] {
     justify-content: center;
     padding: 2px;
     margin: 0 auto; 
+    background-color: white;
+    width: 1000px;
+    padding: 15px;
+    border: 2px solid #6C8EBF; 
+  }
+
+  @media (max-width: 980px) {
+    .stepsToCreateOwnCommentsDiv
+    {
+      display: grid;
+      grid-template-columns: 75px 300px;
+      align-items: center;
+      justify-content: center;
+      padding: 2px;
+      margin: 0 auto; 
+      background-color: white;
+      width: 900px;
+      padding: 15px;
+      border: 2px solid #6C8EBF; 
+    }
+  }
+
+  @media (max-width: 880px) {
+    .stepsToCreateOwnCommentsDiv
+    {
+      display: grid;
+      grid-template-columns: 75px 300px;
+      align-items: center;
+      justify-content: center;
+      padding: 2px;
+      margin: 0 auto; 
+      background-color: white;
+      width: 700px;
+      padding: 15px;
+      border: 2px solid #6C8EBF; 
+    }
+  }
+
+  @media (max-width: 700px) {
+    .stepsToCreateOwnCommentsDiv
+    {
+      display: grid;
+      grid-template-columns: 75px 300px;
+      align-items: center;
+      justify-content: center;
+      padding: 2px;
+      margin: 0 auto; 
+      background-color: white;
+      width: 500px;
+      padding: 15px;
+      border: 2px solid #6C8EBF; 
+    }
   }
 
   label {
     font-weight:bold
   }
+

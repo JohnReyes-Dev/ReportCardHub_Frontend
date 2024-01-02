@@ -52,9 +52,15 @@ const AddYourOwnComments: React.FC = () => {
   };
 
   return (
-    <div className="addYourOwnCommentDiv">
-      <br />
+    <>
+    <br/>
+    <div className="ContentComponentBody">
+
+      <div style={{ backgroundColor: '#6C8EBF', textAlign: 'center' }}>
+              <label className="LabelForContentBody">Steps To Create Comments</label>
+            </div>
       <div className="stepsToCreateOwnCommentsDiv">
+        
         <label>Step 1: </label>
         <a
           href="https://github.com/JohnReyes-Dev/SchoolCommentGenerator/raw/main/CommentTemplate.xlsx"
@@ -107,6 +113,7 @@ const AddYourOwnComments: React.FC = () => {
         </div>
       )}
     </div>
+    </>
   );
 };
 
