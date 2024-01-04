@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import SiteLogo from "../../assets/reportcardhub.png";
+// import SiteLogo from "../../assets/reportcardhub.png";
 import homeIcon from "../../assets/home.svg";
 
 const Navbar: React.FC = () => {
@@ -14,12 +14,12 @@ const Navbar: React.FC = () => {
     >
       <div className="container-fluid">
         <Link to="/" className="nav-link active" aria-current="page">
-          <img
+          {/* <img
             src={SiteLogo}
             aria-hidden="true"
             style={{ width: "300px", height: "60px" }}
             alt="Site Logo"
-          ></img>
+          ></img> */}
         </Link>
 
         <button
