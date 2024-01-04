@@ -36,12 +36,12 @@ const TextAreaForComments: React.FC<CommentDropDownProps> = ({
     for (let i = 0; i < count; i++) {
       const randomIndex = Math.floor(Math.random() * comments.length);
       const propertyname = Object.keys(comments[0])[i + 1] as keyof any;
-      console.log("randomindex = " + randomIndex);
-      console.log("propertyname = " + propertyname.toString());
-      console.log(
-        "comment #  " + i + "   " + comments[randomIndex][propertyname]
-      );
-      console.log(comments.length);
+      // console.log("randomindex = " + randomIndex);
+      // console.log("propertyname = " + propertyname.toString());
+      // console.log(
+      //   "comment #  " + i + "   " + comments[randomIndex][propertyname]
+      // );
+      // console.log(comments.length);
       if (selectedSentencesIntoTextArea == null) {
         setSelectedSentencesIntoTextArea(
           comments[randomIndex][propertyname].toString().trim()

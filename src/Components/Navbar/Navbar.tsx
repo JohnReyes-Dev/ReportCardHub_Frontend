@@ -3,11 +3,15 @@ import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import SiteLogo from '../../assets/reportcardhub.png';
+import SiteLogo from "../../assets/reportcardhub.png";
+import homeIcon from "../../assets/home.svg";
 
 const Navbar: React.FC = () => {
   return (
-    <nav className="navbar navbar-expand-lg" style={{ backgroundColor: "white" }}>
+    <nav
+      className="navbar navbar-expand-lg"
+      style={{ backgroundColor: "white" }}
+    >
       <div className="container-fluid">
         <Link to="/" className="nav-link active" aria-current="page">
           <img
@@ -36,16 +40,34 @@ const Navbar: React.FC = () => {
                 to="/"
                 className="nav-link active LinkStyle"
                 aria-current="page"
-                style={{ marginLeft: "50px", fontSize: "20px", fontWeight: "700" }}
+                style={{
+                  marginLeft: "50px",
+                  fontSize: "16px",
+                  fontWeight: 700,
+                  display: "flex",
+                  flexDirection: "column", // Stack elements vertically
+                  alignItems: "center", // Center items horizontally
+                  textDecoration: "none",
+                  color: "black",
+                }}
               >
-                Home
+                <img
+                  src={homeIcon}
+                  alt="Home Icon"
+                  style={{ width: "35px", height: "35px" }}
+                />
+                <span>Home</span>
               </Link>
             </li>
             <li className="nav-item">
               <Link
                 to="/AddYourOwnComments"
                 className="nav-link active"
-                style={{ marginLeft: "50px", fontSize: "20px", fontWeight: "700" }}
+                style={{
+                  marginLeft: "50px",
+                  fontSize: "20px",
+                  fontWeight: "700",
+                }}
               >
                 Create Comments
               </Link>

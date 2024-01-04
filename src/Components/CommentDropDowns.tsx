@@ -12,6 +12,11 @@ interface CommentDropDownProps {
 
 const hasSpecialCharacters = /[^a-zA-Z0-9]/;
 
+function parseAndStripHtml(html: string): string {
+  const doc = new DOMParser().parseFromString(html, 'text/html');
+  return doc.body.textContent || "";
+}
+
 const CommentDropDown: React.FC<CommentDropDownProps> = ({
   comments,
   selectRefs,
@@ -69,19 +74,30 @@ const CommentDropDown: React.FC<CommentDropDownProps> = ({
                           .trim();
 
                         if (selectedSentencesIntoTextArea == "") {
-                          setSelectedSentencesIntoTextArea(
-                            selectedValue?.toString().trim()
-                          );
-                          console.log(selectedSentencesIntoTextArea);
+                          const parsedValue = parseAndStripHtml(selectedValue);
+                          setSelectedSentencesIntoTextArea(parsedValue.trim());
+                          
                         } else {
-                          setSelectedSentencesIntoTextArea((previousValue) =>
+                          const removeHtmlCode = parseAndStripHtml(selectedSentencesIntoTextArea + " " + selectedValue);
+                          
+                          const removeParentheses = removeHtmlCode.replace(/\(([^)]*)\)/g, (match, content) => {
+                            // Check if the content inside parentheses is "name"
+                            return content.trim().toLowerCase() === 'name' ? match : content;
+                          }).trim();
+
+                          const removeBrackets = removeParentheses.replace(/\[He\/She\]|\[He\]|\[She\]/g, (match) => {
+                            // Check if the content inside brackets is "He/She"
+                            return match.trim().toLowerCase() === '[he/she]' ? match : match.substring(1, match.length - 1);
+                          }).trim();
+
+                          
+                          setSelectedSentencesIntoTextArea(() =>
                             (
-                              previousValue +
-                              " " +
-                              selectedValue.toString().trim()
-                            ).replace(/[\[\](){}<p></p>]/g, "")
+                              removeBrackets
+                            )
+                            // ).replace(/[\[\](){}<p></p>]/g, "").trim()
+                            
                           );
-                          console.log(selectedSentencesIntoTextArea);
                         }
                       }}
                       ref={buttonRefs[index]}
